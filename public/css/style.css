@@ -1,0 +1,19 @@
+
+#postbodyError{
+    display: none;
+}
+
+code{
+    padding: 0;
+    margin: 0;
+
+}
+pre{
+  padding: 10px;
+ 
+}
+.scroll{
+    height: 400px;
+    overflow: auto;
+    overflow-y: auto;
+}
