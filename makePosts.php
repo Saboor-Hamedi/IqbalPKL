@@ -59,27 +59,27 @@ if (isset($_SESSION['email']) == null) {
                 <div class="sb2-1">
                     <!--== USER INFO ==-->
                     <div class="">
-                    <?php $profileSql = 'SELECT admin.id, name, lastname, email, admin_id, profile_image FROM admin
-                                LEFT JOIN profile ON admin.id=profile.admin_id WHERE profile.admin_id =  "'.$user_id.'"';?>
-                        <?php $profileResult = $db->link->query($profileSql);?>
-                        <?php if(mysqli_num_rows($profileResult) <= 0){ ?>
+                        <?php $profileSql = 'SELECT admin.id, name, lastname, email, admin_id, profile_image FROM admin
+                                LEFT JOIN profile ON admin.id=profile.admin_id WHERE profile.admin_id =  "' . $user_id . '"'; ?>
+                        <?php $profileResult = $db->link->query($profileSql); ?>
+                        <?php if (mysqli_num_rows($profileResult) <= 0) { ?>
                             <?php $adminDetails = 'SELECT id, name,
-                                 lastname, email FROM admin WHERE id = "'.$user_id.'"'; ?>
-                                 <?php $adminResult = $db->link->query($adminDetails);?>
-                                 <?php while($adminRow =  $adminResult->fetch_assoc()){?>
-                                    <h4 style="padding: 5px;"><?php echo $adminRow['email'];?></h4>
-                                    <h4 style="padding: 5px;"><?php echo $adminRow['name'];?></h4>
-                                 <?php } ?>
-                        <?php }else{ ?>
-                            <?php while($profileRows =  $profileResult->fetch_assoc()){?>
-                                   <div class="card" style="background-color: #e66030;">
-                               <img style="width: 100%; " src="public/profile_image/<?php echo $profileRows['profile_image'];?>" alt="">
-                                    <h4 style="padding: 5px;"><?php echo $profileRows['email'];?></h4>
-                                    <h4 style="padding: 5px;"><?php echo $profileRows['name'];?></h4>
-                                 <?php } ?>
-                               </div>
-                        <?php } ?>
-                </div>
+                                 lastname, email FROM admin WHERE id = "' . $user_id . '"'; ?>
+                            <?php $adminResult = $db->link->query($adminDetails); ?>
+                            <?php while ($adminRow =  $adminResult->fetch_assoc()) { ?>
+                                <h4 style="padding: 5px;"><?php echo $adminRow['email']; ?></h4>
+                                <h4 style="padding: 5px;"><?php echo $adminRow['name']; ?></h4>
+                            <?php } ?>
+                        <?php } else { ?>
+                            <?php while ($profileRows =  $profileResult->fetch_assoc()) { ?>
+                                <div class="card" style="background-color: #e66030;">
+                                    <img style="width: 100%; " src="public/profile_image/<?php echo $profileRows['profile_image']; ?>" alt="">
+                                    <h4 style="padding: 5px;"><?php echo $profileRows['email']; ?></h4>
+                                    <h4 style="padding: 5px;"><?php echo $profileRows['name']; ?></h4>
+                                <?php } ?>
+                                </div>
+                            <?php } ?>
+                    </div>
                     <!--== LEFT MENU ==-->
                     <div class="sb2-13">
                         <ul class="collapsible" data-collapsible="accordion">
@@ -94,12 +94,12 @@ if (isset($_SESSION['email']) == null) {
                                         </li>
                                         <li><a href="addNewUser.php">Add New User</a>
                                         </li>
-                                        
+
                                     </ul>
                                 </div>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" ></i> Posts</a>
+                                <a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book"></i> Posts</a>
                                 <div class="collapsible-body left-sub-menu">
                                     <ul>
                                         <li><a href="allCourses.php">All Users</a>
@@ -109,7 +109,8 @@ if (isset($_SESSION['email']) == null) {
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i>Teachers</a>                               <div class="collapsible-body left-sub-menu">
+                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i>Teachers</a>
+                                <div class="collapsible-body left-sub-menu">
                                     <ul>
                                         <li><a href="teacherDetails.php">Teacher Details</a>
                                         </li>
@@ -172,10 +173,12 @@ if (isset($_SESSION['email']) == null) {
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i> Students</a>
+                            <li><a href="javascript:void(0)" class="collapsible-header">
+                                    <i class="fa fa-users" aria-hidden="true">
+                                    </i> Students</a>
                                 <div class="collapsible-body left-sub-menu">
                                     <ul>
-                                        <li><a href="allCourses.php">All Students</a>
+                                        <li><a href="studentData.php">All Students</a>
                                         </li>
                                         <li><a href="add_new_student.php">Add New Students</a>
                                         </li>
@@ -258,11 +261,11 @@ if (isset($_SESSION['email']) == null) {
                             </div>
                         </div>
                     </div>
-                 
+
                 </div>
             </div>
 
         </div>
-       
+
     <?php } ?>
     <?php require_once('app/admin_inic/footer.php'); ?>

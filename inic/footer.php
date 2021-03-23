@@ -1,12 +1,3 @@
-<!-- <?php  require_once ('public/modals/postsUpdateModal.php') ?> -->
-
-<!-- footer goes here -->
-    
-
-<!-- end footer -->
- 
-
-
     <!--Import jQuery before materialize.js-->
     <script src="js/main.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

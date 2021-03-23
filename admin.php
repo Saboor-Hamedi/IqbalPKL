@@ -35,7 +35,7 @@ if (isset($_SESSION['email']) == null) {
                 <!--== MY ACCCOUNT ==-->
                 <div class="col-md-2 col-sm-3 col-xs-6">
                     <!-- Dropdown Trigger -->
-                        <a class='waves-effect dropdown-button top-user-pro' href='#' data-activates='top-menu'><img src="images/user/6.png" alt="" />My Account <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    <a class='waves-effect dropdown-button top-user-pro' href='#' data-activates='top-menu'><img src="images/user/6.png" alt="" />My Account <i class="fa fa-angle-down" aria-hidden="true"></i>
                     </a>
 
                     <!-- Dropdown Structure -->
@@ -93,11 +93,11 @@ if (isset($_SESSION['email']) == null) {
                                         </li>
                                         <li><a href="addNewUser.php">Add New User</a>
                                         </li>
-                                            
+
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" ></i> Posts</a>
+                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book"></i> Posts</a>
                                 <div class="collapsible-body left-sub-menu">
                                     <ul>
                                         <li><a href="allCourses.php">All Courses</a>
@@ -108,7 +108,8 @@ if (isset($_SESSION['email']) == null) {
                                 </div>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i>Teachers</a>                                <div class="collapsible-body left-sub-menu">
+                                <a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i>Teachers</a>
+                                <div class="collapsible-body left-sub-menu">
                                     <ul>
                                         <li><a href="teacherDetails.php">Teacher Details</a>
                                         </li>
@@ -171,10 +172,12 @@ if (isset($_SESSION['email']) == null) {
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i> Students</a>
+                            <li><a href="javascript:void(0)" class="collapsible-header">
+                                    <i class="fa fa-users" aria-hidden="true">
+                                    </i> Students</a>
                                 <div class="collapsible-body left-sub-menu">
                                     <ul>
-                                        <li><a href="allCourses.php">All Students</a>
+                                        <li><a href="studentData.php">All Students</a>
                                         </li>
                                         <li><a href="add_new_student.php">Add New Students</a>
                                         </li>
@@ -339,7 +342,7 @@ if (isset($_SESSION['email']) == null) {
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>

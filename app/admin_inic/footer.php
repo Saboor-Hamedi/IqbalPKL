@@ -13,6 +13,7 @@
         CKEDITOR.replace('mainTextArea');
    </script>
    <?php require_once('public/modals/postsUpdateModal.php') ?>
+   <?php require_once('public/modals/studentUpdateModal.php') ?>
 
    <!-- this is the edit modal for posts -->
 

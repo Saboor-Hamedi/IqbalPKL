@@ -171,10 +171,11 @@ if (isset($_SESSION['email']) == null) {
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i> Students</a>
+                            <li><a href="javascript:void(0)" class="collapsible-header">
+                            <i class="fa fa-users" aria-hidden="true"></i> Students</a>
                                 <div class="collapsible-body left-sub-menu">
                                     <ul>
-                                        <li><a href="allCourses.php">All Students</a>
+                                        <li><a href="studentData.php">All Students</a>
                                         </li>
                                         <li><a href="add_new_student.php">Add New Students</a>
                                         </li>
