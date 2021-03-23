@@ -6,6 +6,8 @@
    <script src="js/main.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
    <script src="js/materialize.min.js"></script>
+   <script src="../public/insert_data_js/admin_insert.js"></script>
+   <script src="../public/insert_data_js/student_insert.js"></script>
    <script src="js/custom.js"></script>
    <script>
         CKEDITOR.replace('mainTextArea');

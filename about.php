@@ -6,7 +6,6 @@ if (isset($_SESSION['email']) == null) {
     // echo 'Login first';
 } else { ?>
     <?php $id = $_SESSION['email']; ?>
-
 <body>
 
     <!-- MOBILE MENU -->
@@ -15,7 +14,7 @@ if (isset($_SESSION['email']) == null) {
             <div class="ed-mob-menu-con">
                 <div class="ed-mm-left">
                     <div class="wed-logo">
-                        <a href="index-2.php"><img src="images/logo.png" alt="" />
+                        <a href=""><img src="images/logo.png" alt="" />
 						</a>
                     </div>
                 </div>
@@ -45,12 +44,12 @@ if (isset($_SESSION['email']) == null) {
                             </ul>
                             <h4>User Account</h4>
                             <ul>
-                                <li><a href="#!" data-toggle="modal" data-target="#modal1">Sign In</a></li>
+                                <li><a href="login/login.php" >Login</a></li>
                                 <li><a href="#!" data-toggle="modal" data-target="#modal2">Register</a></li>
                             </ul>
                             <h4>All Pages</h4>
                             <ul>
-                                <li><a href="index-2.php">Home</a></li>
+                                <li><a href="">Home</a></li>
                                 <li><a href="about.php">About us</a></li>
                                 <li><a href="admission.html">Admission</a></li>
                                 <li><a href="all-courses.html">Admin Users</a></li>
@@ -59,7 +58,7 @@ if (isset($_SESSION['email']) == null) {
                                 <li><a href="seminar.html">Seminar</a></li>
                                 <li><a href="events.php">Events</a></li>
                                 <li><a href="event-details.html">Event details</a></li>
-                                <li><a href="event-register.html">Event register</a></li>
+                                <li><a href="event-register.php">Event register</a></li>
                                 <li><a href="contact-us.php">Contact us</a></li>
                             </ul>
                             <h4>User Profile</h4>
@@ -94,7 +93,7 @@ if (isset($_SESSION['email']) == null) {
                         </div>
                         <div class="ed-com-t1-right">
                             <ul>
-                                <li><a href="#!" data-toggle="modal" data-target="#modal1">Sign In</a>
+                                <li><a href="login/login.php" data-toggle="modal" data-target="#modal1">Sign In</a>
                                 </li>
                                 <li><a href="#!" data-toggle="modal" data-target="#modal2">Sign Up</a>
                                 </li>
@@ -121,12 +120,12 @@ if (isset($_SESSION['email']) == null) {
                 <div class="row">
                     <div class="col-md-12">
                         <div class="wed-logo">
-                            <a href="index-2.php"><img src="images/logo.png" alt="" />
+                            <a href=""><img src="images/logo.png" alt="" />
                             </a>
                         </div>
                         <div class="main-menu">
                             <ul>
-                                <li><a href="index-2.php">Home</a>
+                                <li><a href="">Home</a>
                                 </li>
                                 <li class="about-menu">
                                     <a href="about.php" class="mm-arr">About us</a>
@@ -230,7 +229,7 @@ if (isset($_SESSION['email']) == null) {
                                                 <div class="mm1-com mm1-cour-com mm1-s3">
 													<h4>Frontend pages:1</h4>
                                                     <ul>
-                                                        <li><a href="index-2.php">Home</a></li>
+                                                        <li><a href="">Home</a></li>
 														<li><a href="index-1.html">Home - 1</a></li>
 														<li><a href="all-courses.html">Admin Users</a></li>
 														<li><a href="course-details.php">Course Details</a></li>
@@ -243,7 +242,7 @@ if (isset($_SESSION['email']) == null) {
 														<li><a href="departments.html">Departments</a></li>
 														<li><a href="events.php">events</a></li>
 														<li><a href="event-details.html">event details</a></li>
-														<li><a href="event-register.html">event register</a></li>
+														<li><a href="event-register.php">event register</a></li>
                                                     </ul>
                                                 </div>
                                                 <div class="mm1-com mm1-cour-com mm1-s3">
@@ -268,15 +267,15 @@ if (isset($_SESSION['email']) == null) {
 													<h4>Admin panel:1</h4>
                                                     <ul>
 														<li><a href="admin.php">admin</a></li>
-														<li><a href="admin-add-courses.php">Add new course</a></li>
+														<li><a href="addNewUser.php">Add New User</a></li>
 														<li><a href="users.php">Admin Users</a></li>
 														<li><a href="admin-student-details.html">Student details</a></li>
 														<li><a href="admin-user-add.php">Add new user</a></li>
-														<li><a href="admin-user-all.php">All users</a></li>
+														<li><a href="allCourses.php">All users</a></li>
 														<li><a href="admin-panel-setting.php">Admin setting</a></li>
 														<li><a href="admin-event-add.html">event add</a></li>
 														<li><a href="admin-event-all.php">event all</a></li>
-														<li><a href="admin-setting.php">Admin Setting</a></li>
+														<li><a href="makePosts.php">Admin Setting</a></li>
 														<li><a href="admin-slider.php">Slider setting</a></li>
 														<li><a href="admin-slider-edit.html">Slider edit</a></li>
 														<li><a href="admin-course-details.php">course details</a></li>
@@ -297,7 +296,7 @@ if (isset($_SESSION['email']) == null) {
 														<li><a href="admin-job-edit.html">Edit job</a></li>
 														<li><a href="admin-main-menu.php">main menu</a></li>
 														<li><a href="admin-page-add.php">Add new page</a></li>
-														<li><a href="admin-page-all.php">All pages</a></li>
+														<li><a href="teacherDetails.php">All pages</a></li>
 														<li><a href="admin-page-edit.php">Edit page</a></li>
 														<li><a href="admin-forgot.html">forgot password</a></li>
                                                     </ul>

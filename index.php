@@ -1,5 +1,10 @@
 <?php require_once('inic/header.php'); ?>
+
 <body>
+
+    <!-- mobile menu -->
+<?php require_once realpath('inic/mobileMenu.php');?>
+<!-- mobile menu end -->
     <section>
         <!-- TOP BAR -->
         <div class="ed-top">
@@ -11,232 +16,40 @@
                                 <!-- <li><a href="#!" data-toggle="modal" data-target="#modal1">Login</a> -->
                                 <li><a href="login/login.php">Sign in</a></li>
                                 </li>
-                                <li><a href="#!" data-toggle="modal" data-target="#modal2">Sign Up</a>
+                                <li>
+                                    <a href="#!" data-toggle="modal" data-target="#modal2">Sign Up</a>
                                 </li>
                             </ul>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
+        <!-- menu -->
         <div class="top-logo" data-spy="affix" data-offset-top="250">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="wed-logo">
-                            <a href="index-2.php"><img src="images/logo.png" alt="" />
+                            <a href=""><img src="images/logo.png" alt="" />
                             </a>
                         </div>
                         <div class="main-menu">
                             <ul>
-                                <!-- <li><a href="index-2.php">Home</a> -->
-                                </li>
-                                <li class="about-menu">
-                                    <!-- <a href="about.php" class="mm-arr">About us</a> -->
-                                    <!-- MEGA MENU 1 -->
-                                    <div class="mm-pos">
-                                        <div class="about-mm m-menu">
-                                            <div class="m-menu-inn">
-                                                <div class="mm1-com mm1-s1">
-                                                    <div class="ed-course-in">
-                                                        <a class="course-overlay menu-about" href="admission.html">
-                                                            <img src="images/h-about.jpg" alt="">
-                                                            <span>Academics</span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="mm1-com mm1-s2">
-                                                    <p>Want to change the world? At Berkeley we’re doing just that. When you join the Golden Bear community, you’re part of an institution that shifts the global conversation every single day.</p>
-                                                    <a href="about.php" class="mm-r-m-btn">Read more</a>
-                                                </div>
-                                                <div class="mm1-com mm1-s3">
-                                                    <ul>
-                                                        <li><a href="all-courses.php">Admin Users</a></li>
-                                                        <li><a href="course-details.php">Course details</a></li>
-                                                        <li><a href="about.php">About</a></li>
-                                                        <li><a href="admission.html">Admission</a></li>
-                                                        <li><a href="awards.html">Awards</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="mm1-com mm1-s4">
-                                                    <ul>
-                                                        <li><a href="studentDashboard.php">Student profile</a></li>
-                                                        <li><a href="db-courses.html">Dashboard courses</a></li>
-                                                        <li><a href="db-exams.html">Dashboard exams</a></li>
-                                                        <li><a href="db-profile.html">Dashboard profile</a></li>
-                                                        <li><a href="db-time-line.html">Dashboard timeline</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- <li><a href="all-courses.php">Admin Users</a></li> -->
-                                <!--<li><a class='dropdown-button ed-sub-menu' href='#' data-activates='dropdown1'>Courses</a></li>-->
-                                <li class="cour-menu">
-                                    <!-- <a href="#!" class="mm-arr">All Pages</a> -->
-                                    <!-- MEGA MENU 1 -->
-                                    <div class="mm-pos">
-                                        <div class="cour-mm m-menu">
-                                            <div class="m-menu-inn">
-                                                <div class="mm1-com mm1-cour-com mm1-s3">
-                                                    <h4>Frontend pages:1</h4>
-                                                    <ul>
-                                                        <li><a href="index-2.php">Home</a></li>
-                                                        <li><a href="index-1.html">Home - 1</a></li>
-                                                        <li><a href="all-courses.php">Admin Users</a></li>
-                                                        <li><a href="course-details.php">Course Details</a></li>
-                                                        <li><a href="about.php">About us</a></li>
-                                                        <li><a href="admission.html">admission</a></li>
-                                                        <li><a href="awards.html">awards</a></li>
-                                                        <li><a href="blog.html">blog</a></li>
-                                                        <li><a href="blog-details.html">blog details</a></li>
-                                                        <li><a href="contact-us.php">contact us</a></li>
-                                                        <li><a href="departments.html">Departments</a></li>
-                                                        <li><a href="events.php">events</a></li>
-                                                        <li><a href="event-details.html">event details</a></li>
-                                                        <li><a href="event-register.html">event register</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="mm1-com mm1-cour-com mm1-s3">
-                                                    <h4>Frontend pages:2</h4>
-                                                    <ul>
-                                                        <li><a href="facilities.html">facilities</a></li>
-                                                        <li><a href="facilities-detail.html">facilities detail</a></li>
-                                                        <li><a href="research.html">research</a></li>
-                                                        <li><a href="seminar.html">seminar</a></li>
-                                                        <li><a href="gallery-photo.html">gallery photo</a></li>
-                                                    </ul>
-                                                    <h4 class="ed-dr-men-mar-top">User Dashboard</h4>
-                                                    <ul>
-                                                        <li><a href="studentDashboard.php">Student profile</a></li>
-                                                        <li><a href="db-courses.html">Dashboard courses</a></li>
-                                                        <li><a href="db-exams.html">Dashboard exams</a></li>
-                                                        <li><a href="db-profile.html">Dashboard profile</a></li>
-                                                        <li><a href="db-time-line.html">Dashboard timeline</a></li>
-                                                    </ul>
-                                                </div>
-                                                <!-- <div class="mm1-com mm1-cour-com mm1-s3">
-                                                    <h4>Admin panel:1</h4>
-                                                    <ul>
-                                                        <li><a href="admin.php">admin</a></li>
-                                                        <li><a href="admin-add-courses.php">Add new course</a></li>
-                                                        <li><a href="users.php">Admin Users</a></li>
-                                                        <li><a href="admin-student-details.html">Student details</a></li>
-                                                        <li><a href="admin-user-add.php">Add new user</a></li>
-                                                        <li><a href="admin-user-all.php">All users</a></li>
-                                                        <li><a href="admin-panel-setting.php">Admin setting</a></li>
-                                                        <li><a href="admin-event-add.html">event add</a></li>
-                                                        <li><a href="admin-event-all.php">event all</a></li>
-                                                        <li><a href="admin-setting.php">Admin Setting</a></li>
-                                                        <li><a href="admin-slider.php">Slider setting</a></li>
-                                                        <li><a href="admin-slider-edit.html">Slider edit</a></li>
-                                                        <li><a href="admin-course-details.php">course details</a></li>
-                                                        <li><a href="admin-login.html">admin login</a></li>
-                                                    </ul>
-                                                </div> -->
-                                                <div class="mm1-com mm1-cour-com mm1-s3">
-                                                    <h4>Admin panel:2</h4>
-                                                    <ul>
-                                                        <li><a href="admin-event-edit.html">event edit</a></li>
-                                                        <li><a href="admin-exam-add.html">exam add</a></li>
-                                                        <li><a href="admin-exam-all.html">exam all</a></li>
-                                                        <li><a href="admin-exam-edit.html">exam edit</a></li>
-                                                        <li><a href="admin-export-data.php">export data</a></li>
-                                                        <li><a href="admin-import-data.html">import data</a></li>
-                                                        <li><a href="admin-job-add.html">Add new jobs</a></li>
-                                                        <li><a href="admin-job-all.html">All jobs</a></li>
-                                                        <li><a href="admin-job-edit.html">Edit job</a></li>
-                                                        <li><a href="admin-main-menu.php">main menu</a></li>
-                                                        <li><a href="admin-page-add.php">Add new page</a></li>
-                                                        <li><a href="admin-page-all.php">All pages</a></li>
-                                                        <li><a href="admin-page-edit.php">Edit page</a></li>
-                                                        <li><a href="admin-forgot.html">forgot password</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="mm1-com mm1-cour-com mm1-s4">
-                                                    <h4>Admin panel:3</h4>
-                                                    <ul>
-                                                        <li><a href="admin-quick-link.php">quick link</a></li>
-                                                        <li><a href="admin-seminar-add.html">Add new seminar</a></li>
-                                                        <li><a href="admin-seminar-all.html">All seminar</a></li>
-                                                        <li><a href="admin-seminar-edit.html">Edit seminar</a></li>
-                                                        <li><a href="admin-seminar-enquiry.html">Semester enquiry</a></li>
-                                                        <li><a href="admin-all-enquiry.php">All enquiry</a></li>
-                                                        <li><a href="admin-view-enquiry.html">All enquiry view</a></li>
-                                                        <li><a href="admin-event-enquiry.html">event enquiry</a></li>
-                                                        <li><a href="admin-admission-enquiry.php">Admission enquiry</a></li>
-                                                        <li><a href="admin-common-enquiry.html">common enquiry</a></li>
-                                                        <li><a href="admin-course-enquiry.html">course enquiry</a></li>
-                                                        <li><a href="admin-all-menu.html">menu all</a></li>
-                                                        <li><a href="admin-about-menu.php">Menu - About</a></li>
-                                                        <li><a href="admin-admission-menu.php">Menu - admission</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- <li><a href="events.php">Events</a> -->
-                                </li>
-                                <!-- <li><a href="studentDashboard.php">Student</a> -->
-
-                                    <li><a href="/">Home</a> </li>
-                                    <li><a href="contact-us.php">Contact us</a> </li>
-                                     <li><a href="about.php" class="mm-arr">About us</a></li>
-                                     <li><a href="events.php">Events</a> </li>
-                               
+                                <li><a href="/">Home</a> </li>
+                                <li><a href="contact-us.php">Contact us</a> </li>
+                                <li><a href="about.php" class="mm-arr">About us</a></li>
+                                <li><a href="events.php">Events</a> </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="all-drop-down-menu">
-
-                    </div>
-
                 </div>
             </div>
         </div>
+        <!-- menu end -->
         <div class="search-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="search-form">
-                            <form>
-                                <div class="sf-type">
-                                    <div class="sf-input">
-                                        <input type="text" id="sf-box" placeholder="Search course and discount courses">
-                                    </div>
-                                    <div class="sf-list">
-                                        <ul>
-                                            <li><a href="course-details.php">Accounting/Finance</a></li>
-                                            <li><a href="course-details.php">civil engineering</a></li>
-                                            <li><a href="course-details.php">Art/Design</a></li>
-                                            <li><a href="course-details.php">Marine Engineering</a></li>
-                                            <li><a href="course-details.php">Business Management</a></li>
-                                            <li><a href="course-details.php">Journalism/Writing</a></li>
-                                            <li><a href="course-details.php">Physical Education</a></li>
-                                            <li><a href="course-details.php">Political Science</a></li>
-                                            <li><a href="course-details.php">Sciences</a></li>
-                                            <li><a href="course-details.php">Statistics</a></li>
-                                            <li><a href="course-details.php">Web Design/Development</a></li>
-                                            <li><a href="course-details.php">SEO</a></li>
-                                            <li><a href="course-details.php">Google Business</a></li>
-                                            <li><a href="course-details.php">Graphics Design</a></li>
-                                            <li><a href="course-details.php">Networking Courses</a></li>
-                                            <li><a href="course-details.php">Information technology</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="sf-submit">
-                                    <input type="submit" value="Search Course">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+            
             </div>
-        </div>
     </section>
     <!--END HEADER SECTION-->
 
@@ -416,8 +229,8 @@
             <div class="row">
                 <div class="col-md-6">
                     <!--<div class="ho-ex-title">
-            <h4>Upcoming Event</h4>
-        </div>-->
+<h4>Upcoming Event</h4>
+</div>-->
                     <div class="ho-ev-latest ho-ev-latest-bg-1">
                         <div class="ho-lat-ev">
                             <h4>Upcoming Event</h4>
@@ -476,8 +289,8 @@
 
                 <div class="col-md-6 ">
                     <!--<div class="ho-ex-title">
-            <h4>Upcoming Event</h4>
-        </div>-->
+<h4>Upcoming Event</h4>
+</div>-->
                     <div class="ho-ev-latest ho-ev-latest-bg-3">
                         <div class="ho-lat-ev">
                             <h4>Register & Login</h4>
@@ -657,6 +470,4 @@
             </div>
         </div>
     </section>
-
-
     <?php require_once('inic/footer.php'); ?>

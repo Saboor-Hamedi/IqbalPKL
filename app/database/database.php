@@ -12,14 +12,13 @@ Class database{
 	private function connectDB(){
 	try{
 		mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-		$this->link =  @mysqli_connect($this->host, $this->user, $this->pass, $this->dbname);
+		$this->link =  @mysqli_connect($this->host, $this->user, $this->pass, $this->dbname, '3306');
 		if(!$this->link){
 			// $this->error ="Connection fail".$this->link->connect_error;
 			return false;
 		}
 	}catch(mysqli_sql_exception $e){
-		die("Unfortunately, the details you entered for connection are incorrect!");
-
+		die("Unfortunately, the details you entered for connection are incorrect!".$e->getMessage());
 	}
  }
 	// Select or Read data

@@ -81,34 +81,33 @@ if (isset($_SESSION['email']) == null) {
                     <ul class="collapsible" data-collapsible="accordion">
                         <li><a href="admin.php" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
                         </li>
-						<li><a href="admin-setting.php"><i class="fa fa-cogs" aria-hidden="true"></i> Site Setting</a>
+						<li><a href="makePosts.php"><i class="fa fa-cogs" aria-hidden="true"></i> Make Post</a>
                         </li>
                         <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> Admin Users</a>
                             <div class="collapsible-body left-sub-menu">
                                 <ul>
                                     <li><a href="users.php">Admin User</a>
                                     </li>
-                                    <li><a href="admin-add-courses.php">Add New Course</a>
+                                    <li><a href="addNewUser.php">Add New User</a>
                                     </li>
                                     <li><a href="admin-trash-courses.html">Trash Course</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i> Users</a>
+                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" ></i> Posts</a>
                             <div class="collapsible-body left-sub-menu">
                                 <ul>
-                                    <li><a href="admin-user-all.php">All Users</a>
+                                    <li><a href="allCourses.php">All Users</a>
                                     </li>
-                                    <li><a href="admin-user-add.php">Add New user</a>
+                                    <li><a href="add_new_student.php">Add New user</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-bookmark-o" aria-hidden="true"></i>All Pages</a>
-                            <div class="collapsible-body left-sub-menu">
+                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i>Teachers</a>                           <div class="collapsible-body left-sub-menu">
                                 <ul>
-                                    <li><a href="admin-page-all.php">Pages</a>
+                                    <li><a href="teacherDetails.php">Teacher Details</a>
                                     </li>
                                     <li><a href="admin-page-add.php">Create New Page</a>
                                     </li>
@@ -172,9 +171,9 @@ if (isset($_SESSION['email']) == null) {
                         <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i> Students</a>
                             <div class="collapsible-body left-sub-menu">
                                 <ul>
-                                    <li><a href="admin-user-all.php">All Students</a>
+                                    <li><a href="allCourses.php">All Students</a>
                                     </li>
-                                    <li><a href="admin-user-add.php">Add New Students</a>
+                                    <li><a href="add_new_student.php">Add New Students</a>
                                     </li>
                                 </ul>
                             </div>
@@ -214,7 +213,7 @@ if (isset($_SESSION['email']) == null) {
                         </li>
                         <li class="active-bre"><a href="#"> Edit page</a>
                         </li>
-                        <li class="page-back"><a href="index-2.php"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
+                        <li class="page-back"><a href=""><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
                         </li>
                     </ul>
                 </div>
@@ -290,7 +289,7 @@ if (isset($_SESSION['email']) == null) {
 										</div>
                                         <div class="row">
                                             <div class="input-field col s3">
-                                                <i class="waves-effect waves-light btn-large waves-input-wrapper ad-page-pre-btn"><a href="index-2.php" target="_blank">Pager Preview</a></i>
+                                                <i class="waves-effect waves-light btn-large waves-input-wrapper ad-page-pre-btn"><a href="" target="_blank">Pager Preview</a></i>
                                             </div>
                                           <div class="input-field col s2">
                                                 <i class="waves-effect waves-light btn-large waves-input-wrapper" style=""><input type="submit" class="waves-button-input" value="Submit"></i>

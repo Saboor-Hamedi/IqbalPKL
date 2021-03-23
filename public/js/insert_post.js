@@ -1,4 +1,3 @@
-
 // insert
 var isLoading = false;
 document.addEventListener('click', function () {

@@ -59,60 +59,59 @@ if (isset($_SESSION['email']) == null) {
                 <div class="sb2-1">
                     <!--== USER INFO ==-->
                     <div class="">
-                    <?php $profileSql = 'SELECT admin.id, name, lastname, email, admin_id, profile_image FROM admin
-                                LEFT JOIN profile ON admin.id=profile.admin_id WHERE profile.admin_id =  "'.$user_id.'"';?>
-                        <?php $profileResult = $db->link->query($profileSql);?>
-                        <?php if(mysqli_num_rows($profileResult) <= 0){ ?>
+                        <?php $profileSql = 'SELECT admin.id, name, lastname, email, admin_id, profile_image FROM admin
+                                LEFT JOIN profile ON admin.id=profile.admin_id WHERE profile.admin_id =  "' . $user_id . '"'; ?>
+                        <?php $profileResult = $db->link->query($profileSql); ?>
+                        <?php if (mysqli_num_rows($profileResult) <= 0) { ?>
                             <?php $adminDetails = 'SELECT id, name,
-                                 lastname, email FROM admin WHERE id = "'.$user_id.'"'; ?>
-                                 <?php $adminResult = $db->link->query($adminDetails);?>
-                                 <?php while($adminRow =  $adminResult->fetch_assoc()){?>
-                                    <h4 style="padding: 5px;"><?php echo $adminRow['email'];?></h4>
-                                    <h4 style="padding: 5px;"><?php echo $adminRow['name'];?></h4>
-                                 <?php } ?>
-                        <?php }else{ ?>
-                            <?php while($profileRows =  $profileResult->fetch_assoc()){?>
-                                   <div class="card" style="background-color: #e66030;">
-                               <img style="width: 100%; " src="public/profile_image/<?php echo $profileRows['profile_image'];?>" alt="">
-                                    <h4 style="padding: 5px;"><?php echo $profileRows['email'];?></h4>
-                                    <h4 style="padding: 5px;"><?php echo $profileRows['name'];?></h4>
-                                 <?php } ?>
-                               </div>
-                        <?php } ?>
-                </div>
+                                 lastname, email FROM admin WHERE id = "' . $user_id . '"'; ?>
+                            <?php $adminResult = $db->link->query($adminDetails); ?>
+                            <?php while ($adminRow =  $adminResult->fetch_assoc()) { ?>
+                                <h4><?php echo $adminRow['email']; ?></h4>
+                                <h4><?php echo $adminRow['name']; ?></h4>
+                            <?php } ?>
+                        <?php } else { ?>
+                            <?php while ($profileRows =  $profileResult->fetch_assoc()) { ?>
+                                <div class="card" style="background-color: #e66030;">
+                                    <img style="width: 100%; " src="public/profile_image/<?php echo $profileRows['profile_image']; ?>" alt="">
+                                    <h4 style="padding: 5px;"><?php echo $profileRows['email']; ?></h4>
+                                    <h4 style="padding: 5px;"><?php echo $profileRows['name']; ?></h4>
+                                <?php } ?>
+                                </div>
+                            <?php } ?>
+                    </div>
                     <!--== LEFT MENU ==-->
                     <div class="sb2-13">
                         <ul class="collapsible" data-collapsible="accordion">
                             <li><a href="admin.php" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
                             </li>
-                            <li><a href="admin-setting.php"><i class="fas fa-plus-circle"></i>Make Post</a>
+                            <li><a href="makePosts.php"><i class="fa fa-cogs" aria-hidden="true"></i> Make Post</a>
                             </li>
                             <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> Admin Users</a>
                                 <div class="collapsible-body left-sub-menu">
                                     <ul>
                                         <li><a href="users.php">Admin User</a>
                                         </li>
-                                        <li><a href="admin-add-courses.php">Add New Course</a>
+                                        <li><a href="addNewUser.php">Add New User</a>
                                         </li>
-                                        <li><a href="admin-trash-courses.html">Trash Course</a>
+
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book"></i> Posts</a>
+                                <div class="collapsible-body left-sub-menu">
+                                    <ul>
+                                        <li><a href="allCourses.php">All Users</a>
+                                        </li>
+                                        <li><a href="add_new_student.php">Add New user</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i> Users</a>
+                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i>Teachers</a>
                                 <div class="collapsible-body left-sub-menu">
                                     <ul>
-                                        <li><a href="admin-user-all.php">All Users</a>
-                                        </li>
-                                        <li><a href="admin-user-add.php">Add New user</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-bookmark-o" aria-hidden="true"></i>All Pages</a>
-                                <div class="collapsible-body left-sub-menu">
-                                    <ul>
-                                        <li><a href="admin-page-all.php">Pages</a>
+                                        <li><a href="teacherDetails.php">Teacher Details</a>
                                         </li>
                                         <li><a href="admin-page-add.php">Create New Page</a>
                                         </li>
@@ -176,9 +175,9 @@ if (isset($_SESSION['email']) == null) {
                             <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i> Students</a>
                                 <div class="collapsible-body left-sub-menu">
                                     <ul>
-                                        <li><a href="admin-user-all.php">All Students</a>
+                                        <li><a href="allCourses.php">All Students</a>
                                         </li>
-                                        <li><a href="admin-user-add.php">Add New Students</a>
+                                        <li><a href="add_new_student.php">Add New Students</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -216,54 +215,82 @@ if (isset($_SESSION['email']) == null) {
                         <ul>
                             <li><a href="admin.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                             </li>
-                            <li class="active-bre"><a href="#"> Dashboard</a>
+                            <li class="active-bre"><a href="#"> All pages</a>
                             </li>
-                            <li class="page-back"><a href="admin.php"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
+                            <li class="page-back"><a href=""><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
                             </li>
                         </ul>
                     </div>
 
                     <!--== User Details ==-->
                     <div class="sb2-2-3">
-                        <div class="row">
+                        <div class="row scroll">
                             <div class="col-md-12">
-                                <div class="box-inn-sp admin-form">
+                                <div class="box-inn-sp">
                                     <div class="inn-title">
-                                        <h4>Make New Posts</h4>
-                                        <p>Here you can edit your website basic details URL, Phone, Email, Address, User and password and more</p>
+                                        <h4>Teachers</h4>
                                     </div>
                                     <div class="tab-inn">
-                                        <form id="postForm">
-                                            <div class="row">
-                                                <div class="input-field col s12">
-                                                    <input id="posttitle" name="postTitle" type="text" placeholder="Title" class="validate" autocomplete="off">
-                                                </div>
-                                                <div class="input-field col s12">
-                                                    <textarea id="mainTextArea" name="mainTextArea" class="materialize-textarea postBody" placeholder="Your content here..."></textarea>
+                                        <div class="table-responsive table-desi">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>No</th>
+                                                        <th>Image</th>
+                                                        <th>Name</th>
+                                                        <th>Last Name</th>
+                                                        <th>Eamil</th>
+                                                        <th>Insert</th>
+                                                        <th>Update</th>
+                                                        <th>Delete</th>
 
-                                                    <span class="text-danger" id="postbodyError">
-                                                        Write something on the body!
-                                                    </span>
-                                                    <span class="text-danger" id="successMessage"></span>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="input-field col s12">
-                                                    <a name="postsinsertBtn" id="postsinsertBtn" class="waves-effect waves-light btn ">Insert</a>
-                                                </div>
-                                            </div>
-                                        </form>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php $allPosts = $select->selectData('teacher'); ?>
+                                                    <?php foreach ($allPosts as $allItem) { ?>
+                                                        <tr>
+                                                            <td><?php echo $helper->getIncrement(); ?></td>
+                                                            <td>
+                                                                <span class="list-img"><img src="images/user/1.png" alt=""></span>
+                                                            </td>
+                                                            <td>
+                                                                <a href="#"><span class="list-enq-name"><?php echo $allItem['name']; ?></span></a>
+                                                            </td>
+                                                            <td>
+                                                                <span class="list-eng-name">
+                                                                    <?php echo $allItem['lastname']; ?>
+                                                                </span>
+                                                            </td>
+                                                            <td>
+                                                                <span class="list-eng-name">
+                                                                    <?php echo $allItem['email']; ?>
+                                                                </span>
+                                                            </td>
+                                                            
+                                                            <td>
+                                                                <a href="makePosts.php" style="border-radius: 50%;"><i class="fas fa-plus-circle"></i></a>
+                                                            </td>
+                                                            <td>
+                                                                <a id="<?php echo $allItem['id']; ?>" class="fetchUpdatePost" data-toggle="modal" data-target="#postUpdateModale"><i class="fas fa-pen-square"></i>
+                                                            </td>
+                                                            <td>
+                                                                <a href="makePosts.php" style="border-radius: 50%;"><i class="fas fa-trash-alt"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
 
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                 
                 </div>
-            </div>
 
+            </div>
         </div>
-       
     <?php } ?>
     <?php require_once('app/admin_inic/footer.php'); ?>

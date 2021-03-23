@@ -1,6 +1,5 @@
 <?php $id = 0; ?>
 <?php require_once('app/admin_inic/header.php'); ?>
-
 <?php
 if (isset($_SESSION['email']) == null) {
     header('Location: login/login.php');
@@ -21,7 +20,7 @@ if (isset($_SESSION['email']) == null) {
                 <!--== SEARCH ==-->
                 <div class="col-md-6 col-sm-6 mob-hide">
                     <form class="app-search">
-                        <input type="text" placeholder="Search... " class="form-control">
+                        <input type="text" placeholder="Search..." class="form-control">
                         <a href="#"><i class="fa fa-search"></i></a>
                     </form>
                 </div>
@@ -46,7 +45,7 @@ if (isset($_SESSION['email']) == null) {
                         <li class="divider"></li>
                         <li>
                             <a href="app/logout/logout.php" class="ho-dr-con-last waves-effect">
-                                <i class="fas fa-sign-out-alt"></i>Logout</a>
+                                <i class="fas fa-sign-out-alt"></i> Logout</a>
                         </li>
                         </li>
                     </ul>
@@ -59,7 +58,7 @@ if (isset($_SESSION['email']) == null) {
             <div class="row">
                 <div class="sb2-1">
                     <!--== USER INFO ==-->
-                <div class="">
+                    <div class="">
                     <?php $profileSql = 'SELECT admin.id, name, lastname, email, admin_id, profile_image FROM admin
                                 LEFT JOIN profile ON admin.id=profile.admin_id WHERE profile.admin_id =  "'.$user_id.'"';?>
                         <?php $profileResult = $db->link->query($profileSql);?>
@@ -68,12 +67,12 @@ if (isset($_SESSION['email']) == null) {
                                  lastname, email FROM admin WHERE id = "'.$user_id.'"'; ?>
                                  <?php $adminResult = $db->link->query($adminDetails);?>
                                  <?php while($adminRow =  $adminResult->fetch_assoc()){?>
-                                  <h4 style="padding: 5px;"><?php echo $adminRow['email'];?></h4>
+                                    <h4 style="padding: 5px;"><?php echo $adminRow['email'];?></h4>
                                     <h4 style="padding: 5px;"><?php echo $adminRow['name'];?></h4>
                                  <?php } ?>
                         <?php }else{ ?>
                             <?php while($profileRows =  $profileResult->fetch_assoc()){?>
-                                <div class="card" style="background-color: #e66030;">
+                                   <div class="card" style="background-color: #e66030;">
                                <img style="width: 100%; " src="public/profile_image/<?php echo $profileRows['profile_image'];?>" alt="">
                                     <h4 style="padding: 5px;"><?php echo $profileRows['email'];?></h4>
                                     <h4 style="padding: 5px;"><?php echo $profileRows['name'];?></h4>
@@ -86,9 +85,9 @@ if (isset($_SESSION['email']) == null) {
                         <ul class="collapsible" data-collapsible="accordion">
                             <li><a href="admin.php" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
                             </li>
-                            <li><a href="makePosts.php"><i class="fa fa-cogs" aria-hidden="true"></i> Make Post</a>
+                            <li><a href="makePosts.php"><i class="fas fa-plus-circle"></i>Make Post</a>
                             </li>
-                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i>Users</a>
+                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> Admin Users</a>
                                 <div class="collapsible-body left-sub-menu">
                                     <ul>
                                         <li><a href="users.php">Admin User</a>
@@ -99,7 +98,8 @@ if (isset($_SESSION['email']) == null) {
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" ></i> Posts</a>
+                            <li>
+                                <a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" ></i> Posts</a>
                                 <div class="collapsible-body left-sub-menu">
                                     <ul>
                                         <li><a href="allCourses.php">All Users</a>
@@ -109,9 +109,7 @@ if (isset($_SESSION['email']) == null) {
                                     </ul>
                                 </div>
                             </li>
-                            <li>
-                                <a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i>All Pages</a>
-                                <div class="collapsible-body left-sub-menu">
+                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i>Teachers</a>                               <div class="collapsible-body left-sub-menu">
                                     <ul>
                                         <li><a href="teacherDetails.php">Teacher Details</a>
                                         </li>
@@ -219,7 +217,7 @@ if (isset($_SESSION['email']) == null) {
                             </li>
                             <li class="active-bre"><a href="#"> Dashboard</a>
                             </li>
-                            <li class="page-back"><a href=""><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
+                            <li class="page-back"><a href="admin.php"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
                             </li>
                         </ul>
                     </div>
@@ -228,104 +226,43 @@ if (isset($_SESSION['email']) == null) {
                     <div class="sb2-2-3">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="box-inn-sp">
+                                <div class="box-inn-sp admin-form">
                                     <div class="inn-title">
-                                        <h4>Course Details</h4>
+                                        <h4>Make New Posts</h4>
+                                        <p>Here you can edit your website basic details URL, Phone, Email, Address, User and password and more</p>
                                     </div>
-                                    <div class="tab-inn " style="overflow: auto;">
-                                        <div class="table-responsive table-desi" style="width:600px; margin: 0 auto;">
-                                            <table class="table table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th>No</th>
-                                                        <th>Name</th>
-                                                        <th>Last Name</th>
-                                                        <th>Email</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <?php $allPosts = $select->selectById('admin' , $user_id); ?>
-                                                    <?php foreach ($allPosts as $allItem) { ?>
-                                                        <tr>
-                                                            <td><?php echo $helper->getIncrement(); ?></td>
-                                                            <td>
-                                                                <a href="#"><span class="list-enq-name"><?php echo $allItem['name']; ?></span></a>
-                                                            </td>
-                                                            <td>
-                                                                <a href="#"><span class="list-enq-name"><?php echo $allItem['lastname']; ?></span></a>
-                                                            </td>
-                                                            <td>
-                                                                <span class="list-eng-name">
-                                                                    <?php echo $allItem['email']; ?>
-                                                                </span>
-                                                            </td>
-                                                        </tr>
-                                                    <?php } ?>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- profile image -->
-                        <br>
-                        <?php require_once 'app/uploadProfile/uploadProfile.php'; ?>
+                                    <div class="tab-inn">
+                                        <form id="postForm">
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input id="posttitle" name="postTitle" type="text" placeholder="Title" class="validate" autocomplete="off">
+                                                </div>
+                                                <div class="input-field col s12">
+                                                    <textarea id="mainTextArea" name="mainTextArea" class="materialize-textarea postBody" placeholder="Your content here..."></textarea>
 
-                        <?php
-                        $sql = 'SELECT admin_id, profile_image FROM profile WHERE admin_id = "' . $user_id . '"';
-                        $profileID = $db->link->query($sql); ?>
-                        <?php if (mysqli_num_rows($profileID) > 0) { ?>
-                            <?php while ($profileRow = $profileID->fetch_assoc()) { ?>
-                                <?php $profileRow['admin_id']; ?>
-                            <?php  } ?>
-                        <?php } else { ?>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="box-inn-sp">
-                                        <div class="inn-title">
-                                            <h4 class="lead">Insert Profile</h4>
-                                        </div>
-                                        <div class="tab-inn " style="overflow: auto;">
-                                            <div class="table-responsive table-desi">
-                                                <div class="bor">
-                                                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-                                                        <!-- id -->
-                                                        <input type="hidden" name="userid" id="userid" value="<?php echo $user_id; ?>" placeholder="User ID" style="font-size: 16px;">
-                                                        <!-- end id -->
-                                                        <div class="file-field input-field">
-                                                            <div class="btn admin-upload-btn">
-                                                                <span>File</span>
-                                                                <input type="file" name="image[]">
-                                                            </div>
-                                                            <div class="file-path-wrapper">
-                                                                <input class="file-path validate" id="profileimage" name="profileimage" type="text" placeholder="Upload course banner image" style="font-size: 16px;">
-                                                                <div class="text-danger" style="font-size: 10px;"><?php echo $imageError; ?></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="input-field col s12">
-                                                                <i class="waves-effect waves-light waves-light btn ">
-                                                                    <input type="submit" name="profileUploadBtn" class="waves-button-input" value="Upload">
-                                                                </i>
-                                                            </div>
-                                                        </div>
-                                                    </form>
+                                                    <span class="text-danger" id="postbodyError">
+                                                        Write something on the body!
+                                                    </span>
+                                                    <span class="text-danger" id="successMessage"></span>
                                                 </div>
                                             </div>
-                                        </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <a name="postsinsertBtn" id="postsinsertBtn" class="waves-effect waves-light btn ">Insert</a>
+                                                </div>
+                                            </div>
+                                        </form>
+
                                     </div>
                                 </div>
                             </div>
-                        <?php   } ?>
-
-                        <div class="alert ">
-                            <?php echo $imageUploadedMessage; ?>
                         </div>
-                        <!-- end image profile -->
                     </div>
+                 
                 </div>
             </div>
+
         </div>
+       
     <?php } ?>
     <?php require_once('app/admin_inic/footer.php'); ?>

@@ -84,34 +84,33 @@ if (isset($_SESSION['email']) == null) {
                         <ul class="collapsible" data-collapsible="accordion">
                             <li><a href="admin.php" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
                             </li>
-                            <li><a href="admin-setting.php"><i class="fas fa-plus-circle"></i>Make Post</a>
+                            <li><a href="makePosts.php"><i class="fas fa-plus-circle"></i>Make Post</a>
                             </li>
                             <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> Admin Users</a>
                                 <div class="collapsible-body left-sub-menu">
                                     <ul>
                                         <li><a href="users.php">Admin User</a>
                                         </li>
-                                        <li><a href="admin-add-courses.php">Add New Course</a>
+                                        <li><a href="addNewUser.php">Add New User</a>
                                         </li>
-                                        <li><a href="admin-trash-courses.html">Trash Course</a>
+                                            
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" ></i> Posts</a>
+                                <div class="collapsible-body left-sub-menu">
+                                    <ul>
+                                        <li><a href="allCourses.php">All Courses</a>
+                                        </li>
+                                        <li><a href="add_new_student.php">Add New user</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i> Users</a>
-                                <div class="collapsible-body left-sub-menu">
+                            <li>
+                                <a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i>Teachers</a>                                <div class="collapsible-body left-sub-menu">
                                     <ul>
-                                        <li><a href="admin-user-all.php">All Users</a>
-                                        </li>
-                                        <li><a href="admin-user-add.php">Add New user</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-bookmark-o" aria-hidden="true"></i>All Pages</a>
-                                <div class="collapsible-body left-sub-menu">
-                                    <ul>
-                                        <li><a href="admin-page-all.php">Pages</a>
+                                        <li><a href="teacherDetails.php">Teacher Details</a>
                                         </li>
                                         <li><a href="admin-page-add.php">Create New Page</a>
                                         </li>
@@ -175,9 +174,9 @@ if (isset($_SESSION['email']) == null) {
                             <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i> Students</a>
                                 <div class="collapsible-body left-sub-menu">
                                     <ul>
-                                        <li><a href="admin-user-all.php">All Students</a>
+                                        <li><a href="allCourses.php">All Students</a>
                                         </li>
-                                        <li><a href="admin-user-add.php">Add New Students</a>
+                                        <li><a href="add_new_student.php">Add New Students</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -321,13 +320,13 @@ if (isset($_SESSION['email']) == null) {
                                                                 </span>
                                                             </td>
                                                             <td>
-                                                                <a href="admin-setting.php" style="border-radius: 50%;"><i class="fas fa-plus-circle"></i></a>
+                                                                <a href="makePosts.php" style="border-radius: 50%;"><i class="fas fa-plus-circle"></i></a>
                                                             </td>
                                                             <td>
                                                                 <a id="<?php echo $allItem['id']; ?>" class="fetchUpdatePost" data-toggle="modal" data-target="#postUpdateModale"><i class="fas fa-pen-square"></i>
                                                             </td>
                                                             <td>
-                                                                <a href="admin-setting.php" style="border-radius: 50%;"><i class="fas fa-trash-alt"></i></a>
+                                                                <a href="makePosts.php" style="border-radius: 50%;"><i class="fas fa-trash-alt"></i></a>
                                                             </td>
                                                         </tr>
                                                     <?php } ?>
@@ -340,409 +339,9 @@ if (isset($_SESSION['email']) == null) {
                             </div>
                         </div>
                     </div>
-
-                    <!--== User Details ==-->
-                    <div class="sb2-2-3">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="box-inn-sp">
-                                    <div class="inn-title">
-                                        <h4>Course Details</h4>
-                                        <p>All about courses, program structure, fees, best course lists (ranking), syllabus, teaching techniques and other details.</p>
-                                    </div>
-                                    <div class="tab-inn">
-                                        <div class="table-responsive table-desi">
-                                            <table class="table table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Image</th>
-                                                        <th>Course Name</th>
-                                                        <th>Category</th>
-                                                        <th>Durations</th>
-                                                        <th>Start Date</th>
-                                                        <th>End Date</th>
-                                                        <th>Total Seats</th>
-                                                        <th>Status</th>
-                                                        <th>View</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sb2-2-3">
-                        <div class="row">
-                            <!--== Country Campaigns ==-->
-                            <div class="col-md-6">
-                                <div class="box-inn-sp">
-                                    <div class="inn-title">
-                                        <h4>Job Openings</h4>
-                                        <p>Randomised words which don't look even slightly believable. If you are going to use a passage</p>
-                                    </div>
-                                    <div class="tab-inn">
-                                        <div class="table-responsive table-desi">
-                                            <table class="table table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Company</th>
-                                                        <th>Openings</th>
-                                                        <th>Date</th>
-                                                        <th>Location</th>
-                                                        <th>Status</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td><span class="txt-dark weight-500">Samsing</span>
-                                                        </td>
-                                                        <td>50</td>
-                                                        <td>15 April 2018</td>
-                                                        <td>New york, United States</td>
-                                                        <td>
-                                                            <span class="label label-success">Active</span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="txt-dark weight-500">Microsofts</span>
-                                                        </td>
-                                                        <td>75</td>
-                                                        <td>21 Jun 2018</td>
-                                                        <td>New york, United States</td>
-                                                        <td>
-                                                            <span class="label label-success">Active</span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="txt-dark weight-500">Samsing</span>
-                                                        </td>
-                                                        <td>50</td>
-                                                        <td>15 April 2018</td>
-                                                        <td>United States</td>
-                                                        <td>
-                                                            <span class="label label-success">Active</span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="txt-dark weight-500">Microsofts</span>
-                                                        </td>
-                                                        <td>75</td>
-                                                        <td>21 Jun 2018</td>
-                                                        <td>United States</td>
-                                                        <td>
-                                                            <span class="label label-success">Active</span>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--== Country Campaigns ==-->
-                            <div class="col-md-6">
-                                <div class="box-inn-sp">
-                                    <div class="inn-title">
-                                        <h4>Event Details</h4>
-                                        <p>Education is about teaching, learning skills and knowledge.</p>
-                                    </div>
-                                    <div class="tab-inn">
-                                        <div class="table-responsive table-desi">
-                                            <table class="table table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th>State</th>
-                                                        <th>Client</th>
-                                                        <th>Changes</th>
-                                                        <th>Budget</th>
-                                                        <th>Status</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td><span class="txt-dark weight-500">California</span>
-                                                        </td>
-                                                        <td>Beavis</td>
-                                                        <td><span class="txt-success"><i class="fa fa-angle-up" aria-hidden="true"></i><span>2.43%</span></span>
-                                                        </td>
-                                                        <td>
-                                                            <span class="txt-dark weight-500">$1478</span>
-                                                        </td>
-                                                        <td>
-                                                            <span class="label label-success">Active</span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="txt-dark weight-500">Florida</span>
-                                                        </td>
-                                                        <td>Felix</td>
-                                                        <td><span class="txt-success"><i class="fa fa-angle-up" aria-hidden="true"></i><span>1.43%</span></span>
-                                                        </td>
-                                                        <td>
-                                                            <span class="txt-dark weight-500">$951</span>
-                                                        </td>
-                                                        <td>
-                                                            <span class="label label-danger">Closed</span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="txt-dark weight-500">Hawaii</span>
-                                                        </td>
-                                                        <td>Cannibus</td>
-                                                        <td><span class="txt-danger"><i class="fa fa-angle-up" aria-hidden="true"></i><span>-8.43%</span></span>
-                                                        </td>
-                                                        <td>
-                                                            <span class="txt-dark weight-500">$632</span>
-                                                        </td>
-                                                        <td>
-                                                            <span class="label label-default">Hold</span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="txt-dark weight-500">Alaska</span>
-                                                        </td>
-                                                        <td>Neosoft</td>
-                                                        <td><span class="txt-success"><i class="fa fa-angle-up" aria-hidden="true"></i><span>7.43%</span></span>
-                                                        </td>
-                                                        <td>
-                                                            <span class="txt-dark weight-500">$325</span>
-                                                        </td>
-                                                        <td>
-                                                            <span class="label label-default">Hold</span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="txt-dark weight-500">New Jersey</span>
-                                                        </td>
-                                                        <td>Hencework</td>
-                                                        <td><span class="txt-success"><i class="fa fa-angle-up" aria-hidden="true"></i><span>9.43%</span></span>
-                                                        </td>
-                                                        <td>
-                                                            <span>$258</span>
-                                                        </td>
-                                                        <td>
-                                                            <span class="label label-success">Active</span>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sb2-2-3">
-                        <div class="row">
-                            <!--== Listing Enquiry ==-->
-                            <div class="col-md-12">
-                                <div class="box-inn-sp">
-                                    <div class="inn-title">
-                                        <h4>Exam Time Tables</h4>
-                                        <p>Education is about teaching, learning skills and knowledge.</p>
-                                    </div>
-                                    <div class="tab-inn">
-                                        <div class="table-responsive table-desi">
-                                            <table class="table table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Select</th>
-                                                        <th>Degree</th>
-                                                        <th>Exam Name</th>
-                                                        <th>Start Date</th>
-                                                        <th>End Date</th>
-                                                        <th>Timing</th>
-                                                        <th>View</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <input type="checkbox" class="filled-in" id="filled-in-box-1" checked="checked" />
-                                                            <label for="filled-in-box-1"></label>
-                                                        </td>
-                                                        <td>MBA</td>
-                                                        <td><span class="list-enq-name">Civil engineering</span><span class="list-enq-city">Illunois, United States</span>
-                                                        </td>
-                                                        <td>10:00am</td>
-                                                        <td>01:00pm</td>
-                                                        <td>03:00Hrs</td>
-                                                        <td>
-                                                            <a href="admin-exam.html" class="ad-st-view">View</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <input type="checkbox" class="filled-in" id="filled-in-box-2" />
-                                                            <label for="filled-in-box-2"></label>
-                                                        </td>
-                                                        <td>MBA</td>
-                                                        <td><span class="list-enq-name">Google Business</span><span class="list-enq-city">Illunois, United States</span>
-                                                        </td>
-                                                        <td>10:00am</td>
-                                                        <td>01:00pm</td>
-                                                        <td>03:00Hrs</td>
-                                                        <td>
-                                                            <a href="admin-exam.html" class="ad-st-view">View</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <input type="checkbox" class="filled-in" id="filled-in-box-3" />
-                                                            <label for="filled-in-box-3"></label>
-                                                        </td>
-                                                        <td>MBA</td>
-                                                        <td><span class="list-enq-name">Statistics</span><span class="list-enq-city">Illunois, United States</span>
-                                                        </td>
-                                                        <td>10:00am</td>
-                                                        <td>01:00pm</td>
-                                                        <td>03:00Hrs</td>
-                                                        <td>
-                                                            <a href="admin-exam.html" class="ad-st-view">View</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <input type="checkbox" class="filled-in" id="filled-in-box-4" />
-                                                            <label for="filled-in-box-4"></label>
-                                                        </td>
-                                                        <td>MBA</td>
-                                                        <td><span class="list-enq-name">Business Management</span><span class="list-enq-city">Illunois, United States</span>
-                                                        </td>
-                                                        <td>10:00am</td>
-                                                        <td>01:00pm</td>
-                                                        <td>03:00Hrs</td>
-                                                        <td>
-                                                            <a href="admin-exam.html" class="ad-st-view">View</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <input type="checkbox" class="filled-in" id="filled-in-box-5" />
-                                                            <label for="filled-in-box-5"></label>
-                                                        </td>
-                                                        <td>MBA</td>
-                                                        <td><span class="list-enq-name">Art/Design</span><span class="list-enq-city">Illunois, United States</span>
-                                                        </td>
-                                                        <td>10:00am</td>
-                                                        <td>01:00pm</td>
-                                                        <td>03:00Hrs</td>
-                                                        <td>
-                                                            <a href="admin-exam.html" class="ad-st-view">View</a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--== Latest Activity ==-->
-                    <div class="sb2-2-3">
-                        <div class="row">
-                            <!--== Latest Activity ==-->
-                            <div class="col-md-6">
-                                <div class="box-inn-sp">
-                                    <div class="inn-title">
-                                        <h4>Latest Activity</h4>
-                                        <p>Education is about teaching, learning skills and knowledge.</p>
-                                    </div>
-                                    <div class="tab-inn list-act-hom">
-                                        <ul>
-                                            <li class="list-act-hom-con">
-                                                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                                <h4><span>12 may, 2017</span> Welcome to Academy</h4>
-                                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
-                                            </li>
-                                            <li class="list-act-hom-con">
-                                                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                                <h4><span>08 Jun, 2017</span> Academy Leadership</h4>
-                                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
-                                            </li>
-                                            <li class="list-act-hom-con">
-                                                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                                <h4><span>27 July, 2017</span> Awards and Achievement</h4>
-                                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
-                                            </li>
-                                            <li class="list-act-hom-con">
-                                                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                                <h4><span>14 Aug, 2017</span> Facilities and Management</h4>
-                                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
-                                            </li>
-                                            <li class="list-act-hom-con">
-                                                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                                <h4><span>24 Sep, 2017</span> Nation award winning 2017</h4>
-                                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--== Social Media ==-->
-                            <div class="col-md-6">
-                                <div class="box-inn-sp">
-                                    <div class="inn-title">
-                                        <h4>Social Media</h4>
-                                        <p>Education is about teaching, learning skills and knowledge.</p>
-                                    </div>
-                                    <div class="tab-inn">
-                                        <div class="table-responsive table-desi">
-                                            <table class="table table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Media</th>
-                                                        <th>Name</th>
-                                                        <th>Share</th>
-                                                        <th>Like</th>
-                                                        <th>Members</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td><span class="list-img"><img src="images/sm/1.png" alt=""></span>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--== User Details ==-->
-                    <div class="sb2-2-3">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="box-inn-sp">
-                                    <div class="inn-title">
-                                        <h4>Google Map</h4>
-                                        <p>Education is about teaching, learning skills and knowledge.</p>
-                                    </div>
-                                    <div class="tab-inn">
-                                        <div class="table-responsive table-desi tab-map">
-                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6290413.804893654!2d-93.99620524741552!3d39.66116578737809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880b2d386f6e2619%3A0x7f15825064115956!2sIllinois%2C+USA!5e0!3m2!1sen!2sin!4v1469954001005" allowfullscreen></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
-
             </div>
         </div>
-
     <?php } ?>
     <?php require_once('app/admin_inic/footer.php'); ?>

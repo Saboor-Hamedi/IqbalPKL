@@ -1,11 +1,34 @@
 <?php require_once('inic/header.php'); ?>
+
 <body>
-    <!-- MOBILE MENU -->
-    
+  
+
+<!-- mobile menu -->
+<?php require_once realpath('inic/mobileMenu.php');?>
+<!-- mobile menu end -->
+
 
     <!--HEADER SECTION-->
     <section>
-      
+        <!-- TOP BAR -->
+        <div class="ed-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        
+                        <div class="ed-com-t1-right">
+                            <ul>
+                            <li><a href="login/login.php" >Login</a></li>
+                                </li>
+                                <li><a href="#!" data-toggle="modal" data-target="#modal2">Sign Up</a>
+                                </li>
+                            </ul>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- LOGO AND MENU SECTION -->
         <div class="top-logo" data-spy="affix" data-offset-top="250">
@@ -13,14 +36,25 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="wed-logo">
-                            <a href="index-2.php"><img src="images/logo.png" alt="" />
+                            <a href=""><img src="images/logo.png" alt="" />
                             </a>
+                        </div>
+                        <div class="main-menu">
+                            <ul>
+                                <li><a href="/">Home</a> </li>
+                                <li><a href="contact-us.php">Contact us</a> </li>
+                                <li><a href="about.php" class="mm-arr">About us</a></li>
+                                <li><a href="events.php">Events</a> </li>
+                                
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+        <div class="search-top">
+            
+        </div>
     </section>
     <!--END HEADER SECTION-->
 

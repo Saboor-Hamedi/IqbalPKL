@@ -3346,7 +3346,8 @@ left: 0;
      background: #f4f4f4;
      background: linear-gradient(90deg, #ebebeb 32%, #f4f4f4 11%);
 }
- .s18-agenda-inn{
+.notification{
+    display: none;
 }
  .s18-age-tit{
      width: 480px;

@@ -81,34 +81,32 @@ if (isset($_SESSION['email']) == null) {
                         <ul class="collapsible" data-collapsible="accordion">
                             <li><a href="admin.php" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
                             </li>
-                            <li><a href="admin-setting.php"><i class="fa fa-cogs" aria-hidden="true"></i> Site Setting</a>
+                            <li><a href="makePosts.php"><i class="fa fa-cogs" aria-hidden="true"></i> Make Post</a>
                             </li>
                             <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> Admin Users</a>
                                 <div class="collapsible-body left-sub-menu">
                                     <ul>
                                         <li><a href="users.php">Admin User</a>
                                         </li>
-                                        <li><a href="admin-add-courses.php">Add New Course</a>
+                                        <li><a href="addNewUser.php">Add New User</a>
                                         </li>
-                                        <li><a href="admin-trash-courses.html">Trash Course</a>
+                                        
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" ></i> Posts</a>
+                                <div class="collapsible-body left-sub-menu">
+                                    <ul>
+                                        <li><a href="allCourses.php">All Users</a>
+                                        </li>
+                                        <li><a href="add_new_student.php">Add New user</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i> Users</a>
-                                <div class="collapsible-body left-sub-menu">
+                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i>Teachers</a>                               <div class="collapsible-body left-sub-menu">
                                     <ul>
-                                        <li><a href="admin-user-all.php">All Users</a>
-                                        </li>
-                                        <li><a href="admin-user-add.php">Add New user</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-bookmark-o" aria-hidden="true"></i>All Pages</a>
-                                <div class="collapsible-body left-sub-menu">
-                                    <ul>
-                                        <li><a href="admin-page-all.php">Pages</a>
+                                        <li><a href="teacherDetails.php">Teacher Details</a>
                                         </li>
                                         <li><a href="admin-page-add.php">Create New Page</a>
                                         </li>
@@ -172,9 +170,9 @@ if (isset($_SESSION['email']) == null) {
                             <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i> Students</a>
                                 <div class="collapsible-body left-sub-menu">
                                     <ul>
-                                        <li><a href="admin-user-all.php">All Students</a>
+                                        <li><a href="allCourses.php">All Students</a>
                                         </li>
-                                        <li><a href="admin-user-add.php">Add New Students</a>
+                                        <li><a href="add_new_student.php">Add New Students</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -225,7 +223,7 @@ if (isset($_SESSION['email']) == null) {
                             <div class="col-md-12">
                                 <div class="box-inn-sp admin-form">
                                     <div class="inn-title">
-                                        <h4>Website Setting</h4>
+                                        <h4>WebMake Post</h4>
                                         <p>Here you can edit your website basic details URL, Phone, Email, Address, User and password and more</p>
                                     </div>
                                     <div class="tab-inn">

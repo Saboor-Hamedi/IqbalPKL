@@ -15,7 +15,7 @@ if (isset($_SESSION['email']) == null) {
                 <div class="col-md-2 col-sm-3 col-xs-6 sb1-1">
                     <a href="#" class="btn-close-menu"><i class="fa fa-times" aria-hidden="true"></i></a>
                     <a href="#" class="atab-menu"><i class="fa fa-bars tab-menu" aria-hidden="true"></i></a>
-                    <a href="index-2.php" class="logo"><img src="images/logo1.png" alt="" height="20px" /> </a>
+                    <a href="admin.php" class="logo"><img src="images/logo1.png" alt="" height="20px" /> </a>
                 </div>
                 <!--== SEARCH ==-->
                 <div class="col-md-6 col-sm-6 mob-hide">
@@ -85,34 +85,32 @@ if (isset($_SESSION['email']) == null) {
                         <ul class="collapsible" data-collapsible="accordion">
                             <li><a href="admin.php" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
                             </li>
-                            <li><a href="admin-setting.php"><i class="fa fa-cogs" aria-hidden="true"></i> Site Setting</a>
+                            <li><a href="makePosts.php"><i class="fa fa-cogs" aria-hidden="true"></i> Make Post</a>
                             </li>
                             <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> Admin Users</a>
                                 <div class="collapsible-body left-sub-menu">
                                     <ul>
                                         <li><a href="users.php">Admin User</a>
                                         </li>
-                                        <li><a href="admin-add-courses.php">Add New Course</a>
+                                        <li><a href="addNewUser.php">Add New User</a>
                                         </li>
-                                        <li><a href="admin-trash-courses.html">Trash Course</a>
+                                        
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i>Courses</a>
+                                <div class="collapsible-body left-sub-menu">
+                                    <ul>
+                                        <li><a href="allCourses.php">All Courses</a>
+                                        </li>
+                                        <li><a href="add_new_student.php">Add New user</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i> Users</a>
-                                <div class="collapsible-body left-sub-menu">
+                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i>Teachers</a>                               <div class="collapsible-body left-sub-menu">
                                     <ul>
-                                        <li><a href="admin-user-all.php">All Users</a>
-                                        </li>
-                                        <li><a href="admin-user-add.php">Add New user</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-bookmark-o" aria-hidden="true"></i>All Pages</a>
-                                <div class="collapsible-body left-sub-menu">
-                                    <ul>
-                                        <li><a href="admin-page-all.php">Pages</a>
+                                        <li><a href="teacherDetails.php">Teacher Details</a>
                                         </li>
                                         <li><a href="admin-page-add.php">Create New Page</a>
                                         </li>
@@ -176,9 +174,9 @@ if (isset($_SESSION['email']) == null) {
                             <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i> Students</a>
                                 <div class="collapsible-body left-sub-menu">
                                     <ul>
-                                        <li><a href="admin-user-all.php">All Students</a>
+                                        <li><a href="allCourses.php">All Students</a>
                                         </li>
-                                        <li><a href="admin-user-add.php">Add New Students</a>
+                                        <li><a href="add_new_student.php">Add New Students</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -216,159 +214,52 @@ if (isset($_SESSION['email']) == null) {
                         <ul>
                             <li><a href="admin.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
                             </li>
-                            <li class="active-bre"><a href="#"> Users(Students)</a>
+                            <li class="active-bre"><a href="admin.php">Dashboard</a>
                             </li>
-                            <li class="page-back"><a href="index-2.php"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
+                                 <li class="page-back"><a href=""><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
                             </li>
                         </ul>
                     </div>
 
                     <!--== User Details ==-->
                     <div class="sb2-2-3">
-                        <div class="row">
+                        <div class="row scroll">
                             <div class="col-md-12">
                                 <div class="box-inn-sp">
                                     <div class="inn-title">
-                                        <h4>Student Details</h4>
-                                        <p>All about students like name, student id, phone, email, country, city and more</p>
+                                        <h4>All Subjects</h4>
                                     </div>
                                     <div class="tab-inn">
                                         <div class="table-responsive table-desi">
                                             <table class="table table-hover">
                                                 <thead>
                                                     <tr>
-                                                        <th>User</th>
-                                                        <th>Name</th>
-                                                        <th>Phone</th>
-                                                        <th>Email</th>
-                                                        <th>Country</th>
-                                                        <th>Id</th>
-                                                        <th>Date of birth</th>
-                                                        <th>Status</th>
-                                                        <th>View</th>
+                                                        <th>No</th>
+                                                        <th>Subject</th>
+                                                        <th>Insert</th>
+                                                        <th>Update</th>
+                                                        <th>Delete</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td><span class="list-img"><img src="images/user/1.png" alt=""></span>
-                                                        </td>
-                                                        <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                        </td>
-                                                        <td>+01 3214 6522</td>
-                                                        <td>chadengle@dummy.com</td>
-                                                        <td>united states</td>
-                                                        <td>ST17241</td>
-                                                        <td>03 Jun 1990</td>
-                                                        <td>
-                                                            <span class="label label-success">Active</span>
-                                                        </td>
-                                                        <td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="list-img"><img src="images/user/2.png" alt=""></span>
-                                                        </td>
-                                                        <td><a href="#"><span class="list-enq-name">Lucas Caden</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                        </td>
-                                                        <td>+01 8574 6854</td>
-                                                        <td>lucas@gmail.com</td>
-                                                        <td>Illinois</td>
-                                                        <td>ST10231</td>
-                                                        <td>16 Feb 1987</td>
-                                                        <td>
-                                                            <span class="label label-success">Active</span>
-                                                        </td>
-                                                        <td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="list-img"><img src="images/user/4.png" alt=""></span>
-                                                        </td>
-                                                        <td><a href="#"><span class="list-enq-name">Ethan Oliver</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                        </td>
-                                                        <td>+01 8574 6854</td>
-                                                        <td>Ethan@gmail.com</td>
-                                                        <td>Illinois</td>
-                                                        <td>ST32168</td>
-                                                        <td>21 Jun 1992</td>
-                                                        <td>
-                                                            <span class="label label-success">Active</span>
-                                                        </td>
-                                                        <td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="list-img"><img src="images/user/5.png" alt=""></span>
-                                                        </td>
-                                                        <td><a href="#"><span class="list-enq-name">Ethan Oliver</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                        </td>
-                                                        <td>+01 8574 6854</td>
-                                                        <td>Ethan@gmail.com</td>
-                                                        <td>Illinois</td>
-                                                        <td>ST32168</td>
-                                                        <td>21 Jun 1992</td>
-                                                        <td>
-                                                            <span class="label label-success">Active</span>
-                                                        </td>
-                                                        <td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="list-img"><img src="images/user/1.png" alt=""></span>
-                                                        </td>
-                                                        <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                        </td>
-                                                        <td>+01 3214 6522</td>
-                                                        <td>chadengle@dummy.com</td>
-                                                        <td>united states</td>
-                                                        <td>ST17241</td>
-                                                        <td>03 Jun 1990</td>
-                                                        <td>
-                                                            <span class="label label-success">Active</span>
-                                                        </td>
-                                                        <td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="list-img"><img src="images/user/2.png" alt=""></span>
-                                                        </td>
-                                                        <td><a href="#"><span class="list-enq-name">Lucas Caden</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                        </td>
-                                                        <td>+01 8574 6854</td>
-                                                        <td>lucas@gmail.com</td>
-                                                        <td>Illinois</td>
-                                                        <td>ST10231</td>
-                                                        <td>16 Feb 1987</td>
-                                                        <td>
-                                                            <span class="label label-success">Active</span>
-                                                        </td>
-                                                        <td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="list-img"><img src="images/user/4.png" alt=""></span>
-                                                        </td>
-                                                        <td><a href="#"><span class="list-enq-name">Ethan Oliver</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                        </td>
-                                                        <td>+01 8574 6854</td>
-                                                        <td>Ethan@gmail.com</td>
-                                                        <td>Illinois</td>
-                                                        <td>ST32168</td>
-                                                        <td>21 Jun 1992</td>
-                                                        <td>
-                                                            <span class="label label-success">Active</span>
-                                                        </td>
-                                                        <td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="list-img"><img src="images/user/5.png" alt=""></span>
-                                                        </td>
-                                                        <td><a href="#"><span class="list-enq-name">Ethan Oliver</span><span class="list-enq-city">Illunois, United States</span></a>
-                                                        </td>
-                                                        <td>+01 8574 6854</td>
-                                                        <td>Ethan@gmail.com</td>
-                                                        <td>Illinois</td>
-                                                        <td>ST32168</td>
-                                                        <td>21 Jun 1992</td>
-                                                        <td>
-                                                            <span class="label label-success">Active</span>
-                                                        </td>
-                                                        <td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                                    </tr>
+                                                <?php $allPosts = $select->selectData('subjects'); ?>
+                                                    <?php foreach ($allPosts as $allItem) { ?>
+                                                        <tr>
+                                                            <td><?php echo $helper->getIncrement(); ?></td>
+                                                            <td>
+                                                                <a href="#"><span class="list-enq-name"><?php echo $allItem['name']; ?></span></a>
+                                                            </td>
+                                                            <td>
+                                                                <a href="makePosts.php" style="border-radius: 50%;"><i class="fas fa-plus-circle"></i></a>
+                                                            </td>
+                                                            <td>
+                                                                <a id="<?php echo $allItem['id']; ?>" class="fetchUpdatePost" data-toggle="modal" data-target="#postUpdateModale"><i class="fas fa-pen-square"></i>
+                                                            </td>
+                                                            <td>
+                                                                <a href="makePosts.php" style="border-radius: 50%;"><i class="fas fa-trash-alt"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
                                                 </tbody>
                                             </table>
                                         </div>
