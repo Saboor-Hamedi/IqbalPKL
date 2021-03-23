@@ -329,7 +329,8 @@ if (isset($_SESSION['email']) == null) {
                                                                 <a id="<?php echo $allItem['id']; ?>" class="fetchUpdatePost" data-toggle="modal" data-target="#postUpdateModale"><i class="fas fa-pen-square"></i>
                                                             </td>
                                                             <td>
-                                                                <a href="makePosts.php" style="border-radius: 50%;"><i class="fas fa-trash-alt"></i></a>
+                                                                <a href="#" id="<?php echo $allItem['id']?>" class="deletePostBtn" style="border-radius: 50%;">
+                                                                <i class="fas fa-trash-alt"></i></a>
                                                             </td>
                                                         </tr>
                                                     <?php } ?>

@@ -108,6 +108,27 @@ document.addEventListener('click', function () {
         });
     });
 });
+//----------------------------------- Delete-------------------------------------
+
+$('.deletePostBtn').on('click', function () {
+    var id = $(this).attr('id');
+    var el = this;
+    var confirmalert = confirm("Are you sure?");
+    if (confirmalert == true) {
+        $.ajax({
+            url: "../../app/insertPostController/deletePost.php",
+            type: 'POST',
+            data: { id: id },
+            success: function (data) {
+                // Remove row from HTML Table
+                $(el).closest('tr').css('background', 'tomato');
+                $(el).closest('tr').fadeOut(800, function () {
+                    $(this).remove();
+                });
+            }
+        });
+    }
+});
 // close modal
 $(document).ready(function () {
     $(".closeUpdateModalBtn").click(function () {

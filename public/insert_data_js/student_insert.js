@@ -134,6 +134,26 @@ document.addEventListener('click', function () {
         });
     });
 });
+
+   $('.deleteStudentBtn').on('click', function () {
+    var id = $(this).attr('id');
+    var el = this;
+    var confirmalert = confirm("Are you sure?");
+    if (confirmalert == true) {
+        $.ajax({
+            url: "../../app/add_new_student/deleteStudent.php",
+            type: 'POST',
+            data: { id: id },
+            success: function (data) {
+                // Remove row from HTML Table
+                $(el).closest('tr').css('background', 'tomato');
+                $(el).closest('tr').fadeOut(800, function () {
+                    $(this).remove();
+                });
+            }
+        });
+    }
+});
 // validate email
 function validateEmail($email) {
     var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;

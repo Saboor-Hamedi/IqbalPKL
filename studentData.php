@@ -268,7 +268,7 @@ header('Location: login/login.php');
                                             <a href="#" id="<?php echo $allItem['id']; ?>" class="fetchStudentData" data-toggle="modal" data-target="#updateStudentModel"><i class="fas fa-pen-square"></i>
                                         </td>
                                         <td>
-                                            <a href="makePosts.php" style="border-radius: 50%;"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="#" id="<?php echo $allItem['id'] ?>" class="deleteStudentBtn" style="border-radius: 50%;"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                 <?php } ?>

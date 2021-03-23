@@ -108,7 +108,9 @@ if (isset($_SESSION['email']) == null) {
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-users" aria-hidden="true"></i>Teachers</a>
+                            <li><a href="javascript:void(0)" class="collapsible-header">
+                                    <i class="fa fa-users" aria-hidden="true">
+                                    </i>Teachers</a>
                                 <div class="collapsible-body left-sub-menu">
                                     <ul>
                                         <li><a href="teacherDetails.php">Teacher Details</a>
@@ -228,7 +230,7 @@ if (isset($_SESSION['email']) == null) {
                             <div class="col-md-12">
                                 <div class="box-inn-sp">
                                     <div class="inn-title">
-                                        <h4>Teachers</h4>
+                                        <h4>All Teachers</h4>
                                     </div>
                                     <div class="tab-inn">
                                         <div class="table-responsive table-desi">
@@ -236,7 +238,6 @@ if (isset($_SESSION['email']) == null) {
                                                 <thead>
                                                     <tr>
                                                         <th>No</th>
-                                                        <th>Image</th>
                                                         <th>Name</th>
                                                         <th>Last Name</th>
                                                         <th>Eamil</th>
@@ -252,9 +253,6 @@ if (isset($_SESSION['email']) == null) {
                                                         <tr>
                                                             <td><?php echo $helper->getIncrement(); ?></td>
                                                             <td>
-                                                                <span class="list-img"><img src="images/user/1.png" alt=""></span>
-                                                            </td>
-                                                            <td>
                                                                 <a href="#"><span class="list-enq-name"><?php echo $allItem['name']; ?></span></a>
                                                             </td>
                                                             <td>
@@ -267,7 +265,7 @@ if (isset($_SESSION['email']) == null) {
                                                                     <?php echo $allItem['email']; ?>
                                                                 </span>
                                                             </td>
-                                                            
+
                                                             <td>
                                                                 <a href="makePosts.php" style="border-radius: 50%;"><i class="fas fa-plus-circle"></i></a>
                                                             </td>
